@@ -1,1 +1,1 @@
-# Cloud Computing - 7442 - GCH1108.2
+# Cloud Computing - GCH1108.2
