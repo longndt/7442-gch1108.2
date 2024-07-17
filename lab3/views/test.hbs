@@ -1,0 +1,16 @@
+We are living in {{ year }}
+<br>
+{{ city }} is the capital of Viet Nam
+<br>
+{{ mobiles }}
+<br>
+<table class="table table-primary">
+   <tr>
+      <th>Mobiles</th>
+   </tr>
+   {{#each mobiles }}
+      <tr>
+         <td>{{ this }}</td>
+      </tr>
+   {{/each}}
+</table>

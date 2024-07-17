@@ -1,0 +1,104 @@
+<!-- Modal trigger button -->
+<button
+   type="button"
+   class="btn btn-primary btn-lg mt-3 mb-4"
+   data-bs-toggle="modal"
+   data-bs-target="#modalId"
+>
+   About
+</button>
+
+<!-- Modal Body -->
+<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+<div
+   class="modal fade"
+   id="modalId"
+   tabindex="-1"
+   data-bs-backdrop="static"
+   data-bs-keyboard="false"
+
+   role="dialog"
+   aria-labelledby="modalTitleId"
+   aria-hidden="true"
+>
+   <div
+      class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+      role="document"
+   >
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="modalTitleId">
+               About
+            </h5>
+            <button
+               type="button"
+               class="btn-close"
+               data-bs-dismiss="modal"
+               aria-label="Close"
+            ></button>
+         </div>
+         <div class="modal-body">
+            Copyright by Greenwich Vietnam - 2024
+         </div>
+         <div class="modal-footer">
+            <button
+               type="button"
+               class="btn btn-secondary"
+               data-bs-dismiss="modal"
+            >
+               Close
+            </button>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Optional: Place to the bottom of scripts -->
+<script>
+   const myModal = new bootstrap.Modal(
+      document.getElementById("modalId"),
+      options,
+   );
+</script>
+
+
+
+
+
+
+<h1 class="text text-danger">Cau Giay - Ha Noi</h1>
+
+<button class="btn btn-success">Click me</button>
+
+<br><br><br>
+
+<table class="table table-bordered col-md-5">
+   <tr>
+      <th>Id</th>
+      <th>Street name</th>
+   </tr>
+   <tr>
+      <td>1</td>
+      <td>Pham van bach</td>
+   </tr>
+   <tr>
+      <td>2</td>
+      <td>Duong dinh nghe</td>
+   </tr>
+</table>
+
+<div
+   class="alert alert-primary"
+   role="alert"
+>
+   <strong>Warning!</strong
+   ><a href="#" class="alert-link">Click Here</a>
+</div>
+
+<h1-6
+   >Example heading<span
+      class="badge bg-primary"
+      >New</span
+   ></h1-6
+>
+
