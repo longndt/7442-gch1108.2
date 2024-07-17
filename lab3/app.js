@@ -42,10 +42,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-//set custom port
-var port = 4000
-app.listen(port, () => {
-  console.log('http://localhost:' + port)
-})
+//config port for deployment
+var port = process.env.PORT || 3001
+app.listen(port)
 
 module.exports = app;
