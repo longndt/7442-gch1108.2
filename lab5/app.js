@@ -22,6 +22,10 @@ var bodyParser = require('body-parser')
 // (2B) config body-parser
 app.use(bodyParser.urlencoded({ extended : true }))
 
+// (3) declare router
+var BookRouter = require('./routes/book')
+app.use('/book', BookRouter)
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

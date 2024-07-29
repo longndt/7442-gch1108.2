@@ -14,6 +14,7 @@
             <th>Book Title</th>
             <th>Book Price</th>
             <th>Book Cover</th>
+            <th>Menu</th>
          </tr>
       </thead>
       <tbody>
@@ -22,14 +23,18 @@
             <td>{{ title }}</td>
             <td>${{ price }}</td>
             <td>
-               <img src="{{ cover }}"
-               alt="book cover"
-               width="100" height="120">
+               <img src="{{ cover }}" alt="book cover" width="100" height="120">
+            </td>
+            <td>
+               <a class="btn btn-info" href="/book/detail/{{ _id}}">Detail</a>
+               <a class="btn btn-warning" href="/book/edit/{{ _id}}">Edit</a>
+               <a class="btn btn-danger" href="/book/delete/{{ _id}}"
+               onclick="return confirm('Are you sure to delete this book ?')"
+               >Delete</a>
             </td>
          </tr>
          {{/each}}
       </tbody>
    </table>
 </body>
-
 </html>
