@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Book List</title>
+</head>
+
+<body>
+   <table class="table table-primary">
+      <thead>
+         <tr>
+            <th>Book Title</th>
+            <th>Book Price</th>
+            <th>Book Cover</th>
+         </tr>
+      </thead>
+      <tbody>
+         {{#each books }}
+         <tr>
+            <td>{{ title }}</td>
+            <td>${{ price }}</td>
+            <td>
+               <img src="{{ cover }}"
+               alt="book cover"
+               width="100" height="120">
+            </td>
+         </tr>
+         {{/each}}
+      </tbody>
+   </table>
+</body>
+
+</html>
