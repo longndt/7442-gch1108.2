@@ -7,7 +7,7 @@ var BookModel = require('../models/BookModel')
 //URL: http://localhost:PORT/book
 router.get('/', async (req, res) => {
    let books = await BookModel.find({})
-   res.render('book_list', { books })
+   res.render('book/index', { books })
 })
 
 //Get book by id
@@ -18,7 +18,7 @@ router.get('/detail/:id', async (req, res) => {
    //return book data based on id
    let book = await BookModel.findById(id)
    //render view with book data
-   res.render('book_detail', { book })
+   res.render('book/detail', { book })
 })
 
 //Delete book by id
@@ -32,10 +32,27 @@ router.get('/delete/:id', async (req, res) => {
       //show success message
       console.log('delete succeed !')
    } catch (err) {
-      console.log('delete failed !')
       console.error(err)
       //res.send("Delete failed !")
    }
+   //redirect to book list page
+   res.redirect('/book')
+})
+
+//URL: http://localhost:PORT/book/add
+//render form "add book" for user to input
+router.get('/add', (req, res) => {
+   res.render('book/add')
+})
+
+//get input data from "add book" form & save to DB
+router.post('/add', async (req, res) => {
+   //get input data
+   let book = req.body
+   //save book to DB
+   await BookModel.create(book)
+   //show message to console
+   console.log('Add book succeed !')
    //redirect to book list page
    res.redirect('/book')
 })

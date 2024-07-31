@@ -17,7 +17,7 @@ mongoose.connect(db)
   .then(() => console.log('connect to db succeed !'))
   .catch(err => console.error('connect to db failed ! ' + err))
 
-// (2A) import body-parser : get user's input
+// (2A) import body-parser : get user's input (url : req.params, form : req.body)
 var bodyParser = require('body-parser')
 // (2B) config body-parser
 app.use(bodyParser.urlencoded({ extended : true }))
