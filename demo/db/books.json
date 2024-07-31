@@ -1,14 +1,5 @@
 [{
   "_id": {
-    "$oid": "66a9a1217bb3ec9644a59478"
-  },
-  "title": "Rich dad, poor dad",
-  "genre": "Self-help",
-  "cover": "https://cdn.kobo.com/book-images/c81ea4de-cfb7-415d-8634-314aad041fdb/1200/1200/False/rich-dad-poor-dad-9.jpg",
-  "price": 50.55
-},
-{
-  "_id": {
     "$oid": "66a9a2c07bb3ec9644a5947a"
   },
   "title": "Rich Dad, Poor Dad",
@@ -27,39 +18,12 @@
 },
 {
   "_id": {
-    "$oid": "66a9a2c07bb3ec9644a5947c"
-  },
-  "title": "1984",
-  "genre": "Dystopian",
-  "cover": "https://m.media-amazon.com/images/I/81Ly5eJXY3L._AC_UY218_.jpg",
-  "price": 15.2
-},
-{
-  "_id": {
-    "$oid": "66a9a2c07bb3ec9644a5947d"
-  },
-  "title": "The Great Gatsby",
-  "genre": "Classic",
-  "cover": "https://m.media-amazon.com/images/I/81xQAaP5efL._AC_UY218_.jpg",
-  "price": 10.75
-},
-{
-  "_id": {
     "$oid": "66a9a2c07bb3ec9644a5947e"
   },
   "title": "The Catcher in the Rye",
   "genre": "Literary Fiction",
   "cover": "https://m.media-amazon.com/images/I/81OthjkJBuL._AC_UY218_.jpg",
   "price": 12.8
-},
-{
-  "_id": {
-    "$oid": "66a9a2c07bb3ec9644a5947f"
-  },
-  "title": "Sapiens: A Brief History of Humankind",
-  "genre": "Non-fiction",
-  "cover": "https://m.media-amazon.com/images/I/81bo5KdmxBL._AC_UY218_.jpg",
-  "price": 22.4
 },
 {
   "_id": {
@@ -87,13 +51,4 @@
   "genre": "Fantasy",
   "cover": "https://m.media-amazon.com/images/I/91b0C2YNSrL._AC_UY218_.jpg",
   "price": 14.95
-},
-{
-  "_id": {
-    "$oid": "66a9a2c07bb3ec9644a59483"
-  },
-  "title": "Thinking, Fast and Slow",
-  "genre": "Psychology",
-  "cover": "https://m.media-amazon.com/images/I/81wpmLwAFrL._AC_UY218_.jpg",
-  "price": 17.7
 }]
