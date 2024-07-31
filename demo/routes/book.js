@@ -6,7 +6,7 @@ var BookModel = require('../models/BookModel')
 //Get all books
 //URL: http://localhost:PORT/book
 router.get('/', async (req, res) => {
-   let books = await BookModel.find({})
+   let books = await BookModel.find({}).sort({ _id: -1 })
    res.render('book/index', { books })
 })
 
@@ -59,6 +59,28 @@ router.post('/add', async (req, res) => {
    }
 
    //redirect to book list page
+   res.redirect('/book')
+})
+
+//URL: http://localhost:PORT/book/edit/{id}
+//render form "edit"
+router.get('/edit/:id', async (req, res) => {
+   let id = req.params.id
+   let book = await BookModel.findById(id)
+   res.render('book/edit', { book })
+})
+
+//process form "edit"
+router.post('/edit/:id', async (req, res) => {
+   let id = req.params.id
+   let book = req.body
+   try {
+      await BookModel.findByIdAndUpdate(id, book)
+      console.log('Edit book succeed !')
+   } catch (err) {
+      console.log("Edit book failed !")
+      console.error(err)
+   }
    res.redirect('/book')
 })
 
