@@ -55,4 +55,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// (4) set port for cloud deployment   (default: 3000)
+const port = process.env.PORT || 3001
+app.listen(port)
+
 module.exports = app;
