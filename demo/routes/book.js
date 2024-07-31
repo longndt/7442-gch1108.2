@@ -47,12 +47,17 @@ router.get('/add', (req, res) => {
 
 //get input data from "add book" form & save to DB
 router.post('/add', async (req, res) => {
-   //get input data
-   let book = req.body
-   //save book to DB
-   await BookModel.create(book)
-   //show message to console
-   console.log('Add book succeed !')
+   try {
+      //get input data
+      let book = req.body
+      //save book to DB
+      await BookModel.create(book)
+      //show message to console
+      console.log('Add book succeed !')
+   } catch (err) {
+      console.error (err)
+   }
+
    //redirect to book list page
    res.redirect('/book')
 })
