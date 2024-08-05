@@ -4,10 +4,16 @@ const router = express.Router()
 var BookModel = require('../models/BookModel')
 
 //Get all books
-//URL: http://localhost:PORT/book
-router.get('/', async (req, res) => {
+//URL: http://localhost:PORT/book/admin
+router.get('/admin', async (req, res) => {
    let books = await BookModel.find({}).sort({ _id: -1 })
-   res.render('book/index', { books })
+   res.render('book/admin', { books })
+})
+
+//URL: http://localhost:PORT/book/customer
+router.get('/customer', async (req, res) => {
+   let books = await BookModel.find({}).sort({ _id: -1 })
+   res.render('book/customer', { books })
 })
 
 //Get book by id
