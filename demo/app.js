@@ -11,7 +11,7 @@ var app = express();
 // (1A) import mongoose : db connect & access
 var mongoose = require('mongoose')
 // (1B) config mongoose
-var db = "mongodb://localhost:27017/cloud"  // cloud: db name
+var db = "mongodb+srv://longndt:SwZZ3QRJ5YFMLYlc@cluster0.ziyavjz.mongodb.net/cloud"  // cloud: db name
 mongoose.connect(db)
   .then(() => console.log('connect to db succeed !'))
   .catch(err => console.error('connect to db failed ! ' + err))

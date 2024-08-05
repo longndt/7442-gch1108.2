@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 var BookModel = require('../models/BookModel')
+var PublisherModel = require('../models/PublisherModel')
 
 //Get all books
 //URL: http://localhost:PORT/book/admin
@@ -22,7 +23,8 @@ router.get('/detail/:id', async (req, res) => {
    //get book id value from url
    let id = req.params.id
    //return book data based on id
-   let book = await BookModel.findById(id)
+   let book = await BookModel.findById(id).populate('publisher')
+   console.log(book)
    //render view with book data
    res.render('book/detail', { book })
 })
@@ -42,13 +44,14 @@ router.get('/delete/:id', async (req, res) => {
       //res.send("Delete failed !")
    }
    //redirect to book list page
-   res.redirect('/book')
+   res.redirect('/book/admin')
 })
 
 //URL: http://localhost:PORT/book/add
 //render form "add book" for user to input
-router.get('/add', (req, res) => {
-   res.render('book/add')
+router.get('/add', async (req, res) => {
+   let publishers = await PublisherModel.find({})
+   res.render('book/add' , { publishers })
 })
 
 //get input data from "add book" form & save to DB
@@ -65,7 +68,7 @@ router.post('/add', async (req, res) => {
    }
 
    //redirect to book list page
-   res.redirect('/book')
+   res.redirect('/book/admin')
 })
 
 //URL: http://localhost:PORT/book/edit/{id}
@@ -87,7 +90,23 @@ router.post('/edit/:id', async (req, res) => {
       console.log("Edit book failed !")
       console.error(err)
    }
-   res.redirect('/book')
+   res.redirect('/book/admin')
+})
+
+router.post('/search', async (req, res) => {
+   let keyword = req.body.title
+   let books = await BookModel.find({ title: new RegExp(keyword, "i")})
+   res.render('book/admin', { books })
+})
+
+router.get('/sort/asc', async (req, res) => {
+   let books = await BookModel.find().sort({ price: 1 })
+   res.render('book/admin', { books })
+})
+
+router.get('/sort/desc', async (req, res) => {
+   let books = await BookModel.find().sort({ price: -1 })
+   res.render('book/admin', { books })
 })
 
 module.exports = router
