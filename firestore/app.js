@@ -19,6 +19,7 @@ app.get('/', async (req, res) => {
       const collectionSnap = await getDocs(collectionRefs);
       const collectionList = collectionSnap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       res.status(200).send(collectionList);
+      res.render('index', { collectionList})
    } catch (error) {
       console.error(error);
       res.status(500).send("Error loading collection: " + error.message);
@@ -84,6 +85,4 @@ app.delete('/:id', async (req, res) => {
 });
 
 //listen port
-app.listen(3000, () => {
-   console.log("Server is running at http://localhost:3000")
-});
+app.listen(process.env.PORT || 3001)
